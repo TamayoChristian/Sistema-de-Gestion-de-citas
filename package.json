@@ -1,0 +1,33 @@
+{
+  "name": "sistema-medico",
+  "version": "0.0.1",
+  "description": "Sistema-de-gestion-de-citas-medicas",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TamayoChristian/Sistema-de-Gestion-de-citas.git"
+  },
+  "keywords": [
+    "Prueba",
+    "Gestion-Medica",
+    "TypeScript",
+    "Node.js",
+    "Express"
+  ],
+  "author": "Christian Tamayo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TamayoChristian/Sistema-de-Gestion-de-citas/issues"
+  },
+  "homepage": "https://github.com/TamayoChristian/Sistema-de-Gestion-de-citas#readme",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "express": "5.1.0"
+  }
+}
