@@ -36,7 +36,7 @@ const validaCita = [
 ]
 
 //Endpoint de tipo post que ingresa nuevos registros a la base de datos
-app.post('/citas/add', (req: Request, res: Response) => {
+app.post('/citas/add', validaCita, (req: Request, res: Response) => {
   
   //Validar errores en el ingreso de datos.
   const errors = validationResult(req);
