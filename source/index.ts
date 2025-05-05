@@ -14,7 +14,7 @@ const db = new Database('Citas-Medicas.db')
 
 
 //Endpoint de tipo get para mostrar los datos.
-app.get('/citas', (_req, res)=> {
+app.get('/appointments', (_req, res)=> {
 //Recuperamos los datos de la tabla pacientes
   const ObtenerTodos = db.prepare('SELECT * from citas')
   const ListaCitas = ObtenerTodos.all()
@@ -36,7 +36,7 @@ const validaCita = [
 ]
 
 //Endpoint de tipo post que ingresa nuevos registros a la base de datos
-app.post('/citas/add', validaCita, (req: Request, res: Response) => {
+app.post('/appointments', validaCita, (req: Request, res: Response) => {
   
   //Validar errores en el ingreso de datos.
   const errors = validationResult(req);
@@ -61,7 +61,7 @@ app.post('/citas/add', validaCita, (req: Request, res: Response) => {
 
 
 //Endpoint para editar registros
-app.put('/citas/edit/:id', (req, res) => {
+app.put('/appointments/:id', (req, res) => {
   //Comprobar la existencia del id del registro
   const id = Number(req.params.id);
   if(isNaN(id)){
@@ -117,7 +117,7 @@ app.put('/citas/edit/:id', (req, res) => {
 
 
 //Endpoint para eliminar registros
-app.delete('/citas/delete/:id', (req, res) => {
+app.delete('/appointments/:id', (req, res) => {
   //COmprobar id
   const id = Number(req.params.id);
   if(isNaN(id)){
@@ -136,6 +136,39 @@ app.delete('/citas/delete/:id', (req, res) => {
   } catch (error){
     console.error(error)
     return res.status(500).json({error:'Error al eliminar'})
+  }
+})
+
+
+//Reglas de validación del campo status
+const validacionStatus = [
+  body('status').trim().notEmpty().withMessage('EL campo estado es obligatorio')
+  .isIn(['pendiente', 'confirmada', 'cancelada']).withMessage('Valores invalidos')
+]
+
+//Endpoint de tipo patch para actualizar el campo estado.
+app.patch('/appointments/:id/status', validacionStatus, (req:Request, res:Response) => {
+  const id = Number(req.params.id);
+  if (isNaN(id)){
+    return res.status(400).json({error:'id invalido'})
+  }
+
+  const errors = validationResult(req);
+  if(!errors.isEmpty()){
+    return res.status(422).json({errors: errors.array()});  
+  }
+  const {status} = req.body;
+  try{
+    const stmt = db.prepare('Update citas set status = ? where id = ?');
+    const result = stmt.run(status, id);
+
+    if(result.changes === 0){
+      return res.status(404).json({error: 'PAciente no encontrado'})
+    }
+    return res.json({message: 'EStado actualizado', id, status})
+  } catch (error){
+    console.error(error)
+    return res.status(500).json({error: 'error al actualizar el estado'})
   }
 })
 
