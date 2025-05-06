@@ -8,7 +8,7 @@ const IngresarDatos = () => {
     const [reason, setReason] = useState("");
     const [status, setStatus] = useState("");
     const [message, setMessage] = useState("");
-
+    
 
     const SubidaDatos = async (e) => {
         e.preventDefault();
@@ -62,10 +62,10 @@ const IngresarDatos = () => {
             </div>
             <div>
                 <label>Fecha de la cita: </label>
-                <input type="date" value={appoinmentDate} onChange={(e) => setAppoinmentDate(e.target.value)} required />
+                <input type="datetime-local" value={appoinmentDate} onChange={(e) => setAppoinmentDate(e.target.value)} required />
             </div>
             <div>
-                <label>Rason: </label>
+                <label>Razón: </label>
                 <input type="text" value={reason} onChange={(e) => setReason(e.target.value)} required />
             </div>
             <div>
@@ -80,6 +80,7 @@ const IngresarDatos = () => {
             <div>
                 <button type="submit"> ingresar DAtos</button>
             </div>
+            {message && <p style={{color: message.toLocaleUpperCase().includes('error')? 'red': 'green'}}>{message}</p>}
         </form>
     )
 }
