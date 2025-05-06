@@ -11,7 +11,9 @@ const App = () => {
 
   return (
     <>
+    <div className='navbar'>
     <Navbar/>
+    </div>
     <Routes>
       <Route path='/lista' element={<ListarTodo />}></Route>
       <Route path='/ingreso' element={<IngresarDatos/>}></Route>

@@ -1,5 +1,5 @@
 import React, { use, useState } from "react"
-
+import "../styles/Ingreso.css"
 
 const IngresarDatos = () => {
     const [patientName, setPatientName] = useState("");
@@ -53,32 +53,32 @@ const IngresarDatos = () => {
     return (
         <form onSubmit={SubidaDatos}>
             <div>
-                <label>Nombre del paciente: </label>
-                <input type="text" value={patientName} onChange={(e) => setPatientName(e.target.value)} required />
+                <label className="texto">Nombre del paciente: </label>
+                <input type="text" value={patientName} onChange={(e) => setPatientName(e.target.value)} required  className="inputs"/>
             </div>
             <div>
-                <label>Nombre del médico: </label>
-                <input type="text" value={doctorName} onChange={(e) => setDoctorName(e.target.value)} required />
+                <label className="texto">Nombre del médico: </label>
+                <input type="text" value={doctorName} onChange={(e) => setDoctorName(e.target.value)} required className="inputs"/>
             </div>
             <div>
                 <label>Fecha de la cita: </label>
-                <input type="datetime-local" value={appoinmentDate} onChange={(e) => setAppoinmentDate(e.target.value)} required />
+                <input type="datetime-local" value={appoinmentDate} onChange={(e) => setAppoinmentDate(e.target.value)} required  className="inputs"/>
             </div>
             <div>
                 <label>Razón: </label>
-                <input type="text" value={reason} onChange={(e) => setReason(e.target.value)} required />
+                <input type="text" value={reason} onChange={(e) => setReason(e.target.value)} required className="inputs"/>
             </div>
             <div>
                 <label>Estado: </label>
-                <select value={status} onChange={(e) => setStatus(e.target.value)} required>
+                <select value={status} onChange={(e) => setStatus(e.target.value)} required className="inputs">
                     <option value="">Selecciona un estado</option>
                     <option value="pendiente">Pendiente</option>
                     <option value="confirmada">Confirmada</option>
                     <option value="cancelada">Cancelada</option>
                 </select>
             </div>
-            <div>
-                <button type="submit"> ingresar DAtos</button>
+            <div className="centrarIngreso">
+                <button type="submit" className="botonIngreso"> INGRESAR CITA</button>
             </div>
             {message && <p style={{color: message.toLocaleUpperCase().includes('error')? 'red': 'green'}}>{message}</p>}
         </form>

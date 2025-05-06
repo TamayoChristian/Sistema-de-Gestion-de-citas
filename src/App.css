@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+
+}
+
+h1{
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 0, 0);
+    font-size: 400%;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos */
+    align-items: center; /* Alinea verticalmente */
+    padding: 10px; /* Agrega algo de espacio */
+    position: relative;
+}
+
+.botonesNav{
+    background: transparent;
+    color: rgb(129, 14, 14);
+    border: transparent;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 100%;
+    margin-right: 12px;
+    transition: 0.5s;
+}
+
+.texto{
+    font-family: sans-serif;
+}

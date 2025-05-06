@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import "../styles/IngresarID.css"
 
 type Item = {
   id: number;
@@ -122,6 +123,7 @@ const DetallesCita: React.FC = () => {
 
   return (
     <div>
+      <div className='cajaIngresoId'>
       <h2>Buscar cita por ID</h2>
       <input
         type="number"
@@ -130,6 +132,7 @@ const DetallesCita: React.FC = () => {
         placeholder="Ingresa el ID"
       />
       <button onClick={buscarCita}>Buscar</button>
+      </div>
 
       {loading && <p>Cargando citas...</p>}
       {mensaje && <p style={{ color: mensaje.toLowerCase().includes('error') ? 'red' : 'green' }}>{mensaje}</p>}
