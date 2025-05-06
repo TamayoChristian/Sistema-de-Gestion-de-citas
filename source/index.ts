@@ -1,10 +1,16 @@
 import express, {Request, Response}  from 'express';
 import Database from 'better-sqlite3' //Libreria necesaria para usar SQLite
 import { body, validationResult } from 'express-validator';
+import cors from 'cors';
 
 
 const app = express()
 app.use(express.json())
+
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
+
 
 //Establecemos el puerto
 const PORT = 3000
@@ -157,7 +163,9 @@ app.patch('/appointments/:id/status', validacionStatus, (req:Request, res:Respon
   if(!errors.isEmpty()){
     return res.status(422).json({errors: errors.array()});  
   }
+   
   const {status} = req.body;
+  
   try{
     const stmt = db.prepare('Update citas set status = ? where id = ?');
     const result = stmt.run(status, id);
@@ -171,6 +179,8 @@ app.patch('/appointments/:id/status', validacionStatus, (req:Request, res:Respon
     return res.status(500).json({error: 'error al actualizar el estado'})
   }
 })
+
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
