@@ -4,6 +4,11 @@ import axios from 'axios';
 type Item = {
   id: number;
   patientName: string;
+  doctorName: string;
+  appoinmentDate: Date;
+  reason: string;
+  status: string;
+  createdAt: Date
 };
 
 const ListarTodo: React.FC = () => {
@@ -28,13 +33,49 @@ const ListarTodo: React.FC = () => {
 
   return (
     <div>
-      <ul>
+      <table border={1} cellPadding={1} cellSpacing={0}>
+      
+      <thead>
+          <tr>
+            <th>ID Cita</th>
+            <th>Nombre del Paciente</th>
+            <th>Nombre del Doctor</th>
+            <th>Fecha de la Cita</th>
+            <th>Razón</th>
+            <th>Estado</th>
+            <th>Fecha de generación de la cita</th>
+          </tr>
+        </thead>
+        <tbody>
+      
         {items.map(item => (
-          <li key={item.id}>
-            <strong>{item.patientName}</strong>
-          </li>
+          <tr key={item.id}>
+            <td>
+              {item.id}
+            </td>
+            <td>
+              {item.patientName}
+            </td>
+            <td>
+              {item.doctorName}
+            </td>
+            <td>
+              {new Date(item.appoinmentDate).toLocaleString()}
+            </td>
+            <td>
+              {item.reason}
+            </td>
+            <td>
+              {item.status}
+            </td>
+            <td>
+              {new Date(item.createdAt).toLocaleString()}
+            </td>
+          </tr>
         ))}
-      </ul>
+
+      </tbody>
+      </table>
     </div>
   )
 }

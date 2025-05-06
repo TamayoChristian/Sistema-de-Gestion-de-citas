@@ -5,6 +5,7 @@ const Navbar = () => {
         <header>
             <nav>
                 <Link to="/lista">LIsta</Link>
+                <Link to="/ingreso">INgreso</Link>
                 </nav> 
         </header> 
     )
