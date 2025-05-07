@@ -49,7 +49,7 @@ git clone https://github.com/TamayoChristian/Sistema-de-Gestion-de-citas.git
 cd Sistema-de-Gestion-de-citas
 git checkout backend
 
-3. Ejecutar
+# 3. Ejecutar
 ahora abrimos dos terminales, una dentro de la carpeta del frontend y otra dentro de la carpeta del backend y Usamos el siguiente comando para ejecutar los proyectos:
 npm run dev
 este comando sirve para ambas terminales.
