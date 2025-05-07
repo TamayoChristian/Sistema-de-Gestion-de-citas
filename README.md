@@ -1,12 +1,57 @@
-# React + Vite
+El proyecto es un sistema de gestión de citas medicas, fue desarrollado con node.js, express y typescript, además se implementó una base de datos en SQLite para la persistencia de los datos y frontend fue creado con React.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pasos para arrancar el proyecto:
+# 1. Contar con node
+EL proyecto está construido con node, así que necesitamos node para ejecutarlo, para obtener la versión 22.15.0 de node, para ello usaremos Fast Node Manager para instalarlo.
+ejecutemos estos comandos:
+# SI se trabaja en una máquina windows:
 
-Currently, two official plugins are available:
+winget install Schniz.fnm
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+fnm install 22
 
-## Expanding the ESLint configuration
+node -v # Debería mostrar "v22.15.0".
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+npm -v # Debería mostrar "10.9.2".
+
+# SI se trabaja en una máquina linux:
+
+curl -o- https://fnm.vercel.app/install | bash
+
+fnm install 22
+
+node -v # Should print "v22.15.0".
+
+npm -v # Should print "10.9.2".
+
+# Si se trabaja en un equipo MAC OS:
+
+curl -o- https://fnm.vercel.app/install | bash
+
+fnm install 22
+
+node -v # Debería mostrar "v22.15.0".
+
+npm -v # Debería mostrar "10.9.2".
+
+# 2. Clonar las ramas del repositorio
+Creamos dos carpetas, una para el backend y otra para el frontend, y clonamos el repositorio en ambas carpetas.
+
+Carpeta del frontend:
+git clone https://github.com/TamayoChristian/Sistema-de-Gestion-de-citas.git
+cd Sistema-de-Gestion-de-citas
+git checkout frontend
+npm install
+
+
+Carpeta del backend:
+git clone https://github.com/TamayoChristian/Sistema-de-Gestion-de-citas.git
+cd Sistema-de-Gestion-de-citas
+git checkout backend
+
+# 3. Ejecutar
+Ahora abrimos dos terminales, una dentro de la carpeta del frontend y otra dentro de la carpeta del backend y Usamos el siguiente comando para ejecutar los proyectos:
+npm run dev
+Este comando sirve para ambas terminales.
+
+En un navegador nos dirigimos al enlace: http://localhost:5173/

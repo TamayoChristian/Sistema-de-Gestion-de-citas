@@ -135,7 +135,14 @@ const DetallesCita: React.FC = () => {
       </div>
 
       {loading && <p>Cargando citas...</p>}
-      {mensaje && <p style={{ color: mensaje.toLowerCase().includes('error') ? 'red' : 'green' }}>{mensaje}</p>}
+      {mensaje && (
+        <p style={{
+          color: mensaje.toLowerCase().includes('error') ? 'red' : 'green',
+          textAlign: 'center'
+        }}>
+          {mensaje}
+        </p>
+      )}
 
       {cita && (
         <div className='cajaDetalle'>
@@ -151,6 +158,7 @@ const DetallesCita: React.FC = () => {
               value={nuevoEstado ?? cita.status}
               onChange={(e) => setNuevoEstado(e.target.value)}
               disabled={actualizandoEstado}
+              className='inputs'
             >
               {estadosPosibles.map(estado => (
                 <option key={estado} value={estado}>
@@ -162,7 +170,7 @@ const DetallesCita: React.FC = () => {
 
           {/* Mostrar botón solo si hay un cambio pendiente */}
           {nuevoEstado && nuevoEstado !== cita.status && (
-            <button onClick={actualizarEstado} disabled={actualizandoEstado}>
+            <button onClick={actualizarEstado} disabled={actualizandoEstado} className='inputs'>
               {actualizandoEstado ? 'Actualizando...' : 'Confirmar cambio de estado'}
             </button>
           )}
