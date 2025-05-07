@@ -33,4 +33,4 @@ app.get('/ja', (_req, res) => {
 });
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-});
+})

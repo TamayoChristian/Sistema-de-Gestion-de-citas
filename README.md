@@ -20,9 +20,9 @@ curl -o- https://fnm.vercel.app/install | bash
 
 fnm install 22
 
-node -v # Debería mostrar "v22.15.0".
+node -v # Should print "v22.15.0".
 
-npm -v # Debería mostrar "10.9.2".
+npm -v # Should print "10.9.2".
 
 # Si se trabaja en un equipo MAC OS:
 
@@ -50,8 +50,8 @@ cd Sistema-de-Gestion-de-citas
 git checkout backend
 
 # 3. Ejecutar
-ahora abrimos dos terminales, una dentro de la carpeta del frontend y otra dentro de la carpeta del backend y Usamos el siguiente comando para ejecutar los proyectos:
+Ahora abrimos dos terminales, una dentro de la carpeta del frontend y otra dentro de la carpeta del backend y Usamos el siguiente comando para ejecutar los proyectos:
 npm run dev
-este comando sirve para ambas terminales.
+Este comando sirve para ambas terminales.
 
-en un navegador nos dirigimos al enlace: http://localhost:5173/
+En un navegador nos dirigimos al enlace: http://localhost:5173/
