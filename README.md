@@ -1,49 +1,40 @@
 El proyecto es un sistema de gestión de citas medicas, fue desarrollado con node.js, express y typescript, además se implementó una base de datos en SQLite para la persistencia de los datos y frontend fue creado con React.
 
 Pasos para arrancar el proyecto:
-1. Contar con node
+# 1. Contar con node
 EL proyecto está construido con node, así que necesitamos node para ejecutarlo, para obtener la versión 22.15.0 de node, para ello usaremos Fast Node Manager para instalarlo.
 ejecutemos estos comandos:
-SI se trabaja en una máquina windows:
-# Descarga e instala fnm:
+# SI se trabaja en una máquina windows:
+
 winget install Schniz.fnm
 
-# Descarga e instala Node.js:
 fnm install 22
 
-# Verifica la versión de Node.js:
 node -v # Debería mostrar "v22.15.0".
 
-# Verifica versión de npm:
 npm -v # Debería mostrar "10.9.2".
 
-SI se trabaja en una máquina linux:
-# Descarga e instala fnm:
+# SI se trabaja en una máquina linux:
+
 curl -o- https://fnm.vercel.app/install | bash
 
-# Descarga e instala Node.js:
 fnm install 22
 
-# Verifica la versión de Node.js:
 node -v # Debería mostrar "v22.15.0".
 
-# Verifica versión de npm:
 npm -v # Debería mostrar "10.9.2".
 
-Si se trabaja en un equipo MAC OS:
-# Descarga e instala fnm:
+# Si se trabaja en un equipo MAC OS:
+
 curl -o- https://fnm.vercel.app/install | bash
 
-# Descarga e instala Node.js:
 fnm install 22
 
-# Verifica la versión de Node.js:
 node -v # Debería mostrar "v22.15.0".
 
-# Verifica versión de npm:
 npm -v # Debería mostrar "10.9.2".
 
-2. Clonar las ramas del repositorio
+# 2. Clonar las ramas del repositorio
 Creamos dos carpetas, una para el backend y otra para el frontend, y clonamos el repositorio en ambas carpetas.
 
 Carpeta del frontend:
