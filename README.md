@@ -1,4 +1,4 @@
-El proyecto es un sistema de gestión de citas medicas, fue desarrollado con node.js, express y typescript, además se implementó una base de datos en SQLite para la persistencia de los datos y frontend fue creado con React, para correr la aplicación el su totalidad, PRIMERO QUE NADA SE DEBE CLONAR EL REPOSITORIO, dado el mismo ya contiene el backend y el frontend de la aplicación.
+El proyecto es un sistema de gestión de citas medicas, fue desarrollado con node.js, express y typescript, además se implementó una base de datos en SQLite para la persistencia de los datos y frontend fue creado con React.
 
 Pasos para arrancar el proyecto:
 1. Contar con node
@@ -43,5 +43,24 @@ node -v # Debería mostrar "v22.15.0".
 # Verifica versión de npm:
 npm -v # Debería mostrar "10.9.2".
 
-Una vez descargados los archivos, debemos ejecutar al mismo tiempo el backend y el frontend para que la aplicación funcione. 
-Abrimos dos terminales 
+2. Clonar las ramas del repositorio
+Creamos dos carpetas, una para el backend y otra para el frontend, y clonamos el repositorio en ambas carpetas.
+
+Carpeta del frontend:
+git clone https://github.com/TamayoChristian/Sistema-de-Gestion-de-citas.git
+cd Sistema-de-Gestion-de-citas
+git checkout frontend
+npm install
+
+
+Carpeta del backend:
+git clone https://github.com/TamayoChristian/Sistema-de-Gestion-de-citas.git
+cd Sistema-de-Gestion-de-citas
+git checkout backend
+
+3. Ejecutar
+ahora abrimos dos terminales, una dentro de la carpeta del frontend y otra dentro de la carpeta del backend y Usamos el siguiente comando para ejecutar los proyectos:
+npm run dev
+este comando sirve para ambas terminales.
+
+en un navegador nos dirigimos al enlace: http://localhost:5173/
