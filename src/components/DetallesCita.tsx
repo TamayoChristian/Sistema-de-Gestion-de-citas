@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import "../styles/IngresarID.css"
+import "../styles/DetallesCita.css"
 
 type Item = {
   id: number;
@@ -124,22 +124,22 @@ const DetallesCita: React.FC = () => {
   return (
     <div>
       <div className='cajaIngresoId'>
-      <h2>Buscar cita por ID</h2>
-      <input
-        type="number"
-        value={inputId}
-        onChange={(e) => setInputId(e.target.value)}
-        placeholder="Ingresa el ID"
-      />
-      <button onClick={buscarCita}>Buscar</button>
+        <h2>Buscar cita por ID</h2>
+        <input
+          type="number"
+          value={inputId}
+          onChange={(e) => setInputId(e.target.value)}
+          placeholder="Ingresa el ID"
+        />
+        <button onClick={buscarCita}>Buscar</button>
       </div>
 
       {loading && <p>Cargando citas...</p>}
       {mensaje && <p style={{ color: mensaje.toLowerCase().includes('error') ? 'red' : 'green' }}>{mensaje}</p>}
 
       {cita && (
-        <div>
-          <h3>Detalles de la cita:</h3>
+        <div className='cajaDetalle'>
+          <h3 style={{ display: 'flex', justifyContent: "center" }}>Detalles de la cita:</h3>
           <p><strong>ID:</strong> {cita.id}</p>
           <p><strong>Paciente:</strong> {cita.patientName}</p>
           <p><strong>Doctor:</strong> {cita.doctorName}</p>
@@ -168,7 +168,9 @@ const DetallesCita: React.FC = () => {
           )}
 
           <p><strong>Fecha de ingreso:</strong> {new Date(cita.createdAt).toLocaleString()}</p>
-          <button onClick={() => BorrarCita(cita.id)}>Borrar</button>
+          <div style={{ display: 'flex', justifyContent: "center" }}>
+            <button className="botonBorrar" onClick={() => BorrarCita(cita.id)}>Borrar</button>
+          </div>
         </div>
       )}
     </div>

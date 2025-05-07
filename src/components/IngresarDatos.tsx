@@ -51,26 +51,26 @@ const IngresarDatos = () => {
     }
 
     return (
-        <form onSubmit={SubidaDatos}>
+        <form onSubmit={SubidaDatos} className="formulario">
             <div>
                 <label className="texto">Nombre del paciente: </label>
                 <input type="text" value={patientName} onChange={(e) => setPatientName(e.target.value)} required  className="inputs"/>
             </div>
             <div>
                 <label className="texto">Nombre del médico: </label>
-                <input type="text" value={doctorName} onChange={(e) => setDoctorName(e.target.value)} required className="inputs"/>
+                <input style={{marginLeft: "3%"}} type="text" value={doctorName} onChange={(e) => setDoctorName(e.target.value)} required className="inputs"/>
             </div>
             <div>
                 <label>Fecha de la cita: </label>
-                <input type="datetime-local" value={appoinmentDate} onChange={(e) => setAppoinmentDate(e.target.value)} required  className="inputs"/>
+                <input style={{marginLeft: "6.5%"}} type="datetime-local" value={appoinmentDate} onChange={(e) => setAppoinmentDate(e.target.value)} required  className="inputs"/>
             </div>
             <div>
                 <label>Razón: </label>
-                <input type="text" value={reason} onChange={(e) => setReason(e.target.value)} required className="inputs"/>
+                <input style={{marginLeft: "15%"}} type="text" value={reason} onChange={(e) => setReason(e.target.value)} required className="inputs"/>
             </div>
             <div>
                 <label>Estado: </label>
-                <select value={status} onChange={(e) => setStatus(e.target.value)} required className="inputs">
+                <select style={{marginLeft: "14.5%"}} value={status} onChange={(e) => setStatus(e.target.value)} required className="inputs">
                     <option value="">Selecciona un estado</option>
                     <option value="pendiente">Pendiente</option>
                     <option value="confirmada">Confirmada</option>

@@ -1,8 +1,0 @@
-.cajaIngresoId {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* para que input y botón estén uno debajo del otro */
-    margin-top: 20px;
-    gap: 10px; /* espacio entre elementos */
-}

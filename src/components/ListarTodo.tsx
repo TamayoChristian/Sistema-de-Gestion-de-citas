@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import '../styles/Listar.css'
 
 type Item = {
   id: number;
@@ -32,10 +33,10 @@ const ListarTodo: React.FC = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div>
+    <div className='tabla'>
       <table border={1} cellPadding={1} cellSpacing={0}>
-      
-      <thead>
+
+        <thead>
           <tr>
             <th>ID Cita</th>
             <th>Nombre del Paciente</th>
@@ -47,34 +48,34 @@ const ListarTodo: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-      
-        {items.map(item => (
-          <tr key={item.id}>
-            <td>
-              {item.id}
-            </td>
-            <td>
-              {item.patientName}
-            </td>
-            <td>
-              {item.doctorName}
-            </td>
-            <td>
-              {new Date(item.appoinmentDate).toLocaleString()}
-            </td>
-            <td>
-              {item.reason}
-            </td>
-            <td>
-              {item.status}
-            </td>
-            <td>
-              {new Date(item.createdAt).toLocaleString()}
-            </td>
-          </tr>
-        ))}
 
-      </tbody>
+          {items.map(item => (
+            <tr key={item.id}>
+              <td className='celda'>
+                {item.id}
+              </td>
+              <td className='celda'>
+                {item.patientName}
+              </td>
+              <td className='celda'>
+                {item.doctorName}
+              </td>
+              <td className='celda'>
+                {new Date(item.appoinmentDate).toLocaleString()}
+              </td>
+              <td className='celda'>
+                {item.reason}
+              </td>
+              <td className='celda'>
+                {item.status}
+              </td>
+              <td className='celda'>
+                {new Date(item.createdAt).toLocaleString()}
+              </td>
+            </tr>
+          ))}
+
+        </tbody>
       </table>
     </div>
   )
